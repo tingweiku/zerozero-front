@@ -27,6 +27,8 @@ b-container#adminfront
     cancel-title="取消"
     @ok="submitModal"
     @hidden="resetForm"
+    :ok-disabled="submitDisable"
+    :cancel-disabled="submitDisable"
   )
     b-form-group(
       label="上傳圖片"
@@ -73,6 +75,7 @@ export default {
           label: '操作'
         }
       ],
+      submitDisable: false,
       form: {
         image: null,
         show: false,
@@ -81,7 +84,11 @@ export default {
     }
   },
   methods: {
-    resetForm () {
+    resetForm (event) {
+      if (this.submitDisable) {
+        event.preventDefault()
+        return
+      }
       this.form = {
         image: null,
         show: false,
@@ -98,6 +105,7 @@ export default {
       this.$bvModal.show('modal-carousel-edit')
     },
     async delCarousel (data) {
+      this.submitDisable = true
       try {
         await this.axios.delete('/carousels/' + data.item._id, {
           headers: {
@@ -139,6 +147,7 @@ export default {
       }
       this.$refs.carouselTable.refresh()
       this.$bvModal.hide('modal-carousel')
+      this.submitDisable = false
     },
     async submitEditModal () {
       try {

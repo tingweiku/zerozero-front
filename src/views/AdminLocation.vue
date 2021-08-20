@@ -33,6 +33,8 @@ b-container#adminlocation
     cancel-title="取消"
     @ok="submitModal"
     @hidden="resetForm"
+    :ok-disabled="submitDisable"
+    :cancel-disabled="submitDisable"
   )
     b-form-group(
       label="名稱"
@@ -114,6 +116,7 @@ export default {
           label: '操作'
         }
       ],
+      submitDisable: false,
       form: {
         name: '',
         address: '',
@@ -144,7 +147,11 @@ export default {
     }
   },
   methods: {
-    resetForm () {
+    resetForm (event) {
+      if (this.submitDisable) {
+        event.preventDefault()
+        return
+      }
       this.form = {
         name: '',
         address: '',
@@ -186,6 +193,7 @@ export default {
       }
     },
     async submitModal () {
+      this.submitDisable = true
       try {
         const formData = {
           name: this.form.name,
@@ -228,6 +236,7 @@ export default {
         }
         this.$refs.locationTable.refresh()
         this.$bvModal.hide('modal-location')
+        this.submitDisable = false
       } catch (error) {
         this.$swal({
           icon: 'error',
