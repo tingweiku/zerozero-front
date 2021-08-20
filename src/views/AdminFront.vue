@@ -105,7 +105,6 @@ export default {
       this.$bvModal.show('modal-carousel-edit')
     },
     async delCarousel (data) {
-      this.submitDisable = true
       try {
         await this.axios.delete('/carousels/' + data.item._id, {
           headers: {
@@ -123,6 +122,7 @@ export default {
       }
     },
     async submitModal () {
+      this.submitDisable = true
       try {
         const fd = new FormData()
         for (const key in this.form) {
