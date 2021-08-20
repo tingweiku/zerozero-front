@@ -150,6 +150,7 @@ export default {
       this.submitDisable = false
     },
     async submitEditModal () {
+      this.submitDisable = true
       try {
         const { data } = await this.axios.patch('/carousels/' + this.form._id, { show: this.form.show }, {
           headers: {
@@ -170,6 +171,7 @@ export default {
           text: error.response.data.message
         })
       }
+      this.submitDisable = false
     }
   },
   async mounted () {
