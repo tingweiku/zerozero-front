@@ -1,0 +1,20 @@
+#adminorders {
+  #adminorders-table {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    thead {
+      tr {
+        background: $green3;
+      }
+    }
+    th {
+      color: $white;
+    }
+    th:nth-child(1) {
+      width: 50px;
+    }
+    td {
+      vertical-align: middle !important;
+    }
+  }
+}

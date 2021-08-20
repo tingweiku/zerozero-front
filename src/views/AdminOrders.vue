@@ -1,0 +1,72 @@
+<template lang="pug">
+b-container#adminorders
+  p.adminTitle 兌換管理
+  b-table#adminorders-table.text-center(
+    striped
+    hover
+    :items="orders"
+    :fields="fields"
+  )
+    template(#cell(account)="data")
+      | {{ data.item.user.account }}
+    template(#cell(name)="data")
+      | {{ data.item.products.name }}
+    template(#cell(price)="data")
+      | {{ data.item.products.price }}
+</template>
+
+<script>
+export default {
+  name: 'AdminOrders',
+  data () {
+    return {
+      orders: [],
+      fields: [
+        {
+          key: '_id',
+          label: '訂單編號'
+        },
+        {
+          key: 'account',
+          label: '帳戶',
+          sortable: true
+        },
+        {
+          key: 'name',
+          label: '商品名稱',
+          sortable: true
+        },
+        {
+          key: 'price',
+          label: '商品價格',
+          sortable: true
+        },
+        {
+          key: 'date',
+          label: '訂單日期',
+          sortable: true
+        }
+      ]
+    }
+  },
+  async mounted () {
+    try {
+      const { data } = await this.axios.get('/orders/all', {
+        headers: {
+          authorization: 'Bearer ' + this.$store.state.jwt.token
+        }
+      })
+      this.orders = data.result.map(order => {
+        order.date = new Date(order.date).toLocaleString()
+        return order
+      })
+    } catch (error) {
+      this.$swal({
+        icon: 'error',
+        title: '錯誤',
+        text: '取得訂單失敗'
+      })
+    }
+  }
+}
+</script>

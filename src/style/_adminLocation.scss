@@ -1,0 +1,50 @@
+#adminlocation {
+  position: relative;
+  #btn-addlocation {
+    position: absolute;
+    top: 110px;
+    right: 15px;
+    button {
+      width: 100px;
+      background: $green8;
+      border: none;
+    }
+  }
+  #adminlocation-table {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    thead {
+      tr {
+        background: $green3;
+      }
+    }
+    th {
+      color: $white;
+    }
+    th:nth-child(1) {
+      width: 300px;
+    }
+    th:nth-child(2) {
+      width: 300px;
+    }
+    td {
+      vertical-align: middle !important;
+    }
+    .btn-edit {
+      background: $green7;
+      border: none;
+      margin-bottom: 5px;
+    }
+    .btn-del {
+      border: none;
+    }
+  }
+  @include lg {
+    #adminlocation-table {
+      .btn-edit {
+        margin-bottom: 0;
+        margin-right: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+#admincar {
+  a {
+    color: $gray3;
+  }
+  .nav-link.active {
+    color: $white;
+    background: $green8;
+  }
+}
+
+#admincarundone {
+  #admincarundone-table {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    thead {
+      tr {
+        background: $green3;
+      }
+    }
+    th {
+      color: $white;
+    }
+    th:nth-child(4) {
+      width: 150px;
+    }
+    th:nth-child(7) {
+      width: 100px;
+    }
+    td {
+      vertical-align: middle !important;
+    }
+    .btn-edit {
+      background: $green7;
+      border: none;
+    }
+  }
+}
+
+#admincardone {
+  #admincardone-table {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    thead {
+      tr {
+        background: $green3;
+      }
+    }
+    th {
+      color: $white;
+    }
+    th:nth-child(4) {
+      width: 150px;
+    }
+    th:nth-child(7) {
+      width: 100px;
+    }
+    td {
+      vertical-align: middle !important;
+    }
+  }
+}

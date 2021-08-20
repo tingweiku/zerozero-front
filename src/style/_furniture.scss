@@ -1,0 +1,204 @@
+#furniture {
+  pointer-events: none;
+  #title-1,
+  #title-2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-top: 100px;
+  }
+  #box {
+    width: 70%;
+    background: $white;
+    border-radius: 1rem;
+    // box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    margin: 0 auto 70px auto;
+    pointer-events: auto;
+    .step {
+      width: 70%;
+      border: 1px solid rgba(0, 0, 0, 0);
+      border-radius: 1rem;
+      margin: 25px auto 25px auto;
+      position: relative;
+      .step-img {
+        text-align: center;
+        margin-top: 20px;
+        img {
+          width: 65%;
+        }
+      }
+      .step-text {
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        p {
+          color: $green8;
+          font-size: 1.5rem;
+          font-weight: bolder;
+        }
+        span {
+          font-size: 1.2rem;
+        }
+      }
+      .icon {
+        color: $green8;
+        font-size: 1.5rem;
+        position: absolute;
+        bottom: -13%;
+        left: 50%;
+        transform: rotate(90deg) translateY(50%);
+      }
+      .icon-2 {
+        display: none;
+      }
+    }
+  }
+  #divider {
+    width: 90%;
+    height: 1px;
+    background: $gray4;
+    margin: 30px auto 0 auto;
+  }
+  .hightlight {
+    color: $green8;
+    font-weight: bolder;
+  }
+  #box-2,
+  #box-3 {
+    width: 100%;
+    background: $white;
+    border-radius: 1rem;
+    padding: 50px;
+    margin-bottom: 50px;
+    pointer-events: auto;
+    #subtitle {
+      margin-bottom: 15px;
+      img {
+        width: 50px;
+        margin-right: 20px;
+      }
+      span {
+        color: $green7;
+        font-size: 1.5rem;
+        font-weight: bolder;
+      }
+    }
+    #table {
+      text-align: center;
+      thead {
+        tr {
+          background: $green3;
+        }
+      }
+      th {
+        color: $white;
+        text-align: center;
+        border: 1px solid $gray4;
+      }
+      td {
+        color: $gray3;
+        vertical-align: middle !important;
+        border: 1px solid $gray4;
+      }
+    }
+    #table + #table {
+      margin-top: 50px;
+    }
+  }
+  #box-4 {
+    text-align: center;
+    margin-bottom: 50px;
+    pointer-events: auto;
+    button {
+      width: 150px;
+      height: 45px;
+      font-size: 1.2rem;
+      background: $green7;
+      border: none;
+      a {
+        text-decoration: none;
+        color: $white;
+      }
+      .icon-3 {
+        margin-left: 10px;
+        color: $white;
+      }
+    }
+  }
+  @include md {
+    #title-1,
+    #title-2 {
+      margin-top: -50px;
+    }
+    #box {
+      width: 100%;
+      .step {
+        width: 100%;
+        margin: 10px auto 10px auto;
+        .step-img {
+          img {
+            width: 80%;
+          }
+        }
+        .step-text {
+          p {
+            font-size: 1.3rem;
+          }
+          span {
+            font-size: 1rem;
+          }
+        }
+        .icon {
+          display: none;
+        }
+        .icon-2 {
+          display: block;
+          color: $green8;
+          font-size: 1.3rem;
+          position: absolute;
+          top: 126px;
+          right: -25%;
+        }
+      }
+    }
+    #divider {
+      width: 100%;
+      margin: 80px auto 0 auto;
+    }
+  }
+  @include lg {
+    #box {
+      .step {
+        margin: 10px auto 10px auto;
+        .step-img {
+          img {
+            width: 80%;
+          }
+        }
+        .step-text {
+          p {
+            font-size: 1.5rem;
+          }
+          span {
+            font-size: 1.2rem;
+          }
+        }
+        .icon-2 {
+          position: absolute;
+          top: 167px;
+          right: -20%;
+        }
+      }
+    }
+  }
+  @include xl {
+    #box {
+      .step {
+        .icon-2 {
+          position: absolute;
+          top: 195px;
+          right: -15%;
+        }
+      }
+    }
+  }
+}

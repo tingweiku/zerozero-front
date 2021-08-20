@@ -1,0 +1,21 @@
+#adminmembers {
+  #adminmembers-table {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    thead {
+      tr {
+        background: $green3;
+      }
+    }
+    th {
+      color: $white;
+    }
+    td {
+      vertical-align: middle !important;
+    }
+    .btn-edit {
+      background: $green7;
+      border: none;
+    }
+  }
+}

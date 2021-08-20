@@ -1,0 +1,59 @@
+#location {
+  pointer-events: none;
+  #title-1,
+  #title-2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-top: 100px;
+  }
+  #map {
+    pointer-events: auto;
+    #map-name {
+      font-size: 1rem;
+      font-weight: bolder;
+    }
+    #map-address {
+      font-size: 1rem;
+    }
+  }
+  #divider {
+    width: 90%;
+    height: 1px;
+    background: $gray4;
+    margin: 50px auto 0 auto;
+  }
+  .box {
+    margin-bottom: 50px;
+    pointer-events: auto;
+    .item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 10px;
+      &:hover {
+        filter: hue-rotate(260deg)
+      }
+      .item-img {
+        img {
+          width: 150px;
+        }
+      }
+      .item-text {
+        font-size: 1.2rem;
+        font-weight: bolder;
+      }
+    }
+  }
+  @include md {
+    #title-1,
+    #title-2 {
+      margin-top: -50px;
+    }
+    #divider {
+      width: 100%;
+      margin: 80px auto 0 auto;
+    }
+  }
+}

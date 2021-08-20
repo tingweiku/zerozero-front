@@ -1,0 +1,83 @@
+#account {
+  #title-1 {
+    margin-top: 0;
+    padding-top: 100px;
+  }
+  #box {
+    border: 1px solid $green8;
+    border-radius: 0.5rem;
+    margin: 10px 0 35px 0;
+    padding: 30px;
+    span {
+      font-size: 1.1rem;
+      color: $green8;
+      font-weight: bolder;
+    }
+    #points {
+      color: $green7;
+      font-weight: bolder;
+    }
+  }
+  a {
+    color: $gray3;
+  }
+  .nav-link.active {
+    color: $white;
+    background: $green8;
+  }
+  .text {
+    font-weight: bolder;
+    font-size: 1.1rem;
+  }
+  @include md {
+    #title-1 {
+      padding-top: 50px;
+    }
+  }
+}
+
+#accountorder {
+  #accountorder-table {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+    thead {
+      tr {
+        background: $green3;
+      }
+    }
+    th {
+      color: $white;
+    }
+    td {
+      vertical-align: middle !important;
+    }
+  }
+}
+
+#accountre {
+  #accountre-table1,
+  #accountre-table2 {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+    thead {
+      tr {
+        background: $green3;
+      }
+    }
+    th {
+      color: $white;
+    }
+    th:nth-child(1) {
+      width: 300px;
+    }
+    th:nth-child(2) {
+      width: 180px;
+    }
+    th:nth-child(3) {
+      width: 180px;
+    }
+    td {
+      vertical-align: middle !important;
+    }
+  }
+}

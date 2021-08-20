@@ -1,0 +1,59 @@
+#navbar {
+  background: $green3;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  #logo1 {
+    width: 60px;
+    height: auto;
+  }
+  @include md {
+    display: none;
+  }
+}
+
+#nav {
+  display: none;
+  position: relative;
+  z-index: 999;
+  @include md {
+    display: block;
+    width: 100%;
+    height: 200px;
+    background: $green3;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    #logo2 {
+      text-align: center;
+      padding-top: 30px;
+      img {
+        width: 230px;
+        height: auto;
+      }
+    }
+    #menu {
+      margin-top: 30px;
+      a {
+        display: block;
+        padding: 5px 15px;
+        color: $gray1;
+        text-decoration: none;
+        &:hover {
+          background: rgba(254, 250, 224, 0.2);
+          cursor: pointer;
+        }
+      }
+      a + a {
+        margin-left: 5px;
+      }
+    }
+  }
+  @include lg {
+    #menu {
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      a + a {
+        margin-left: 10px;
+      }
+    }
+  }
+}

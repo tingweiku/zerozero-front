@@ -1,0 +1,28 @@
+#admin {
+  #adminNavbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    #logo {
+    width: 60px;
+    height: auto;
+    }
+  }
+}
+
+#adminhome {
+  img {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.25;
+    user-select: none;
+  }
+  @include md {
+    img {
+      width: 500px;
+    }
+  }
+}

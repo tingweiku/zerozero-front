@@ -1,0 +1,118 @@
+#home {
+  #carousel {
+    padding-top: 65px;
+  }
+  #box {
+    margin: 0 auto 50px auto;
+    .service {
+      width: 320px;
+      height: 240px;
+      border-radius: 0.5rem;
+      margin-bottom: 10px;
+      overflow: hidden;
+      position: relative;
+      .service-img {
+        width: auto;
+        height: 240px;
+        transition: 0.5s;
+        &:hover {
+          transform: scale(1.1);
+          opacity: 0.5;
+        }
+      }
+      .service-mask {
+        z-index: 99;
+        width: 320px;
+        height: 240px;
+        border-radius: 0.5rem;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.7) 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+      .box-2 {
+        width: 320px;
+        z-index: 998;
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
+        display: flex;
+        .box-img {
+          width: 90px;
+          text-align: center;
+          margin-right: 20px;
+          img {
+            height: 65px;
+          }
+        }
+        .box-text {
+          .box-title {
+            color: $green9;
+            font-size: 1.2rem;
+            font-weight: bolder;
+            padding-top: 5px;
+            padding-bottom: 5px
+          }
+          .box-subtitle {
+            color: $white;
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+  }
+  @include md {
+    #carousel {
+      padding-top: 0;
+    }
+    #title {
+      padding-top: 30px;
+      margin-bottom: 30px;
+    }
+    #box {
+      margin-bottom: 100px;
+      .col-md-6:nth-child(1),
+      .col-md-6:nth-child(3){
+        margin-right: -18px;
+      }
+    }
+  }
+  @include lg {
+    #title {
+      padding-top: 40px;
+    }
+    #box {
+      .col-md-6:nth-child(1),
+      .col-md-6:nth-child(3){
+        margin-right: -18px;
+      }
+      .service {
+        width: 400px;
+        height: 300px;
+        .service-img {
+          width: auto;
+          height: 300px;
+        }
+        .service-mask {
+          width: 400px;
+          height: 300px;
+        }
+        .box-2 {
+          .box-img {
+            width: 100px;
+            img {
+              height: 70px;
+            }
+          }
+          .box-text {
+            .box-title {
+              font-size: 1.4rem;
+              padding-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

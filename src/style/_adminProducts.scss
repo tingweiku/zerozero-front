@@ -1,0 +1,35 @@
+#adminproducts {
+  position: relative;
+  #btn-addproducts {
+    position: absolute;
+    top: 110px;
+    right: 15px;
+    button {
+      width: 100px;
+      background: $green8;
+      border: none;
+    }
+  }
+  #adminproducts-table {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    thead {
+      tr {
+        background: $green3;
+      }
+    }
+    th {
+      color: $white;
+    }
+    td {
+      vertical-align: middle !important;
+      img {
+        height: 80px;
+      }
+    }
+    .btn-edit {
+      background: $green7;
+      border: none;
+    }
+  }
+}

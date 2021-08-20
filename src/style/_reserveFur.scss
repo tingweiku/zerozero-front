@@ -1,0 +1,76 @@
+#reservefur {
+  #title-1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-top: 100px;
+  }
+  #box {
+    width: 100%;
+    background: $white;
+    border-radius: 1rem;
+    border: 1px solid $gray4;
+    padding: 50px 50px 40px 50px;
+    margin-bottom: 30px;
+    #subtitle {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      img {
+        width: 50px;
+        margin-right: 20px;
+      }
+      span {
+        color: $green7;
+        font-size: 1.5rem;
+        font-weight: bolder;
+      }
+    }
+    .custom-control {
+      margin-top: 10px;
+    }
+    #text {
+      font-size: 14px;
+      color: #e07a5f;
+    }
+    #text2 {
+      color: $green8;
+      font-weight: bolder;
+    }
+  }
+  #box-2 {
+    margin-bottom: 50px;
+    #btn-submit {
+      background: $green7;
+      border: none;
+    }
+    #btn-reset {
+      border: none;
+    }
+  }
+  @include md {
+    #title-1 {
+      margin-top: -50px;
+    }
+    #box {
+      width: 100%;
+    }
+    .custom-control {
+      display: inline-block;
+    }
+    .custom-control + .custom-control {
+      margin-left: 30px;
+    }
+
+  }
+  @include lg {
+    #box {
+      width: 80%;
+    }
+  }
+  @include xl {
+    #box {
+      width: 65%;
+    }
+  }
+}

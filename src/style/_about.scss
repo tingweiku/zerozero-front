@@ -1,0 +1,118 @@
+#about {
+  pointer-events: none;
+  .title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-top: 100px;
+  }
+  .box-1 {
+    margin-bottom: 30px;
+    span {
+      font-size: 1.2rem;
+      color: $green8;
+      font-weight: bolder;
+      text-align: center;
+      display: block;
+    }
+  }
+  .box-2 {
+    margin-bottom: 60px;
+    span {
+      font-size: 1.2rem;
+      display: block;
+    }
+  }
+  #divider {
+    width: 100%;
+    height: 1px;
+    background: $gray4;
+    margin: 30px auto 0 auto;
+  }
+  .box-3 {
+    margin: 40px 0;
+    #title {
+      font-size: 1.3rem;
+      color: $green8;
+      font-weight: bolder;
+    }
+    #subtitle {
+      color: $green7;
+      font-weight: bolder;
+    }
+  }
+  .box-4 {
+    margin: 40px 0;
+    pointer-events: auto;
+    #title {
+      font-size: 1.3rem;
+      color: $green8;
+      font-weight: bolder;
+      margin-bottom: 30px;
+    }
+    .service {
+      width: 70%;
+      background: $white;
+      border-radius: 1rem;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+      margin: 10px auto 20px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      transition: 0.3s;
+      .service-img {
+        img {
+          width: auto;
+          height: 150px;
+          margin: 20px auto 10px auto;
+        }
+      }
+      .service-text {
+        margin: 15px 30px 20px 30px;
+        .service-title {
+          color: $green7;
+          font-size: 1.1rem;
+          font-weight: bolder;
+        }
+      }
+      &:hover {
+        background: rgba(106, 207, 0, 0.05);
+      }
+    }
+  }
+  @include md {
+    .title {
+      margin-top: -50px;
+    }
+    .box-4 {
+      .service {
+        width: 100%;
+        height: 355px;
+      }
+    }
+  }
+  @include lg {
+    .box-4 {
+      .service {
+        width: 100%;
+        height: 360px;
+        .service-img {
+          img {
+            width: auto;
+            height: 130px;
+          }
+        }
+        &:hover {
+          transform: translateY(-10px);
+        }
+      }
+    }
+  }
+  @include xl {
+    .box-4 {
+      .service {
+        width: 100%;
+        height: 350px;
+      }
+    }
+  }
+}

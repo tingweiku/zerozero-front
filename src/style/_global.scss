@@ -1,0 +1,24 @@
+body {
+  height: 100vh;
+  background: $gray1;
+  color: $gray3;
+  font-family: '微軟正黑體';
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  margin-top: 50px;
+}
+
+.adminTitle {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  padding-top: 100px;
+  margin-bottom: 30px;
+}
+
+a {
+  text-decoration: none !important;
+}
