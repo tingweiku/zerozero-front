@@ -109,7 +109,7 @@ b-container#furniture
   #box-3
     #subtitle.d-flex.justify-content-start
       img(:src='require("../assets/ftable2.png")')
-      span 家具清運
+      span 家電清運
     p 電視、冰箱、洗衣機、冷氣機、電腦主機、印表機、熱水器、小家電等皆可回收
     b-table-simple#table
       b-thead
