@@ -55,9 +55,9 @@ export default {
     return {
       furnitures: [],
       cars: [],
-      currentPage1: 10,
-      currentPage2: 10,
-      perPage: 1,
+      currentPage1: 1,
+      currentPage2: 1,
+      perPage: 10,
       fields: [
         {
           key: 'address',
