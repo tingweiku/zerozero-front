@@ -4,7 +4,7 @@ b-container#accountre
   b-table#accountre-table1.text-center(
     striped
     hover
-    :items="furnitures"
+    :items="pageBox1"
     :fields="fields"
   )
     template(#cell(items)="data")
@@ -15,11 +15,19 @@ b-container#accountre
     template(#cell(done)="data")
       font-awesome-icon(:icon='["fas", "check"]' v-if='data.item.done')
       font-awesome-icon(:icon='["fas", "times"]' v-else)
+  .overflow-auto.d-flex.justify-content-center
+    b-pagination.mb-5(
+      v-model="currentPage1"
+      :total-rows="totalRows1"
+      :per-page="perPage"
+      first-number
+      last-number
+    )
   p.text 廢車回收預約
   b-table#accountre-table2.text-center(
     striped
     hover
-    :items="cars"
+    :items="pageBox2"
     :fields="fields"
   )
     template(#cell(items)="data")
@@ -30,6 +38,14 @@ b-container#accountre
     template(#cell(done)="data")
       font-awesome-icon(:icon='["fas", "check"]' v-if='data.item.done')
       font-awesome-icon(:icon='["fas", "times"]' v-else)
+  .overflow-auto.d-flex.justify-content-center
+    b-pagination.mb-5(
+      v-model="currentPage2"
+      :total-rows="totalRows2"
+      :per-page="perPage"
+      first-number
+      last-number
+    )
 </template>
 
 <script>
@@ -39,6 +55,9 @@ export default {
     return {
       furnitures: [],
       cars: [],
+      currentPage1: 1,
+      currentPage2: 1,
+      perPage: 1,
       fields: [
         {
           key: 'address',
@@ -68,6 +87,28 @@ export default {
           sortable: true
         }
       ]
+    }
+  },
+  computed: {
+    pageBox1 () {
+      const items = this.furnitures
+      return items.slice(
+        (this.currentPage1 - 1) * this.perPage,
+        this.currentPage1 * this.perPage
+      )
+    },
+    totalRows1 () {
+      return this.furnitures.length
+    },
+    pageBox2 () {
+      const items = this.cars
+      return items.slice(
+        (this.currentPage2 - 1) * this.perPage,
+        this.currentPage2 * this.perPage
+      )
+    },
+    totalRows2 () {
+      return this.cars.length
     }
   },
   async mounted () {

@@ -218,6 +218,15 @@ export default {
             },
             _id: data.result._id
           })
+          this.form = {
+            name: '',
+            address: '',
+            local: {
+              lat: 0,
+              lng: 0
+            },
+            _id: ''
+          }
         } else {
           await this.axios.patch('/locations/' + this.form._id, formData, {
             headers: {
@@ -233,6 +242,15 @@ export default {
             },
             _id: this.form._id
           }
+        }
+        this.form = {
+          name: '',
+          address: '',
+          local: {
+            lat: 0,
+            lng: 0
+          },
+          _id: ''
         }
         this.$refs.locationTable.refresh()
         this.$bvModal.hide('modal-location')
