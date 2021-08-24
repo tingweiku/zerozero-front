@@ -4,7 +4,7 @@ b-container#adminorders
   b-table#adminorders-table.text-center(
     striped
     hover
-    :items="orders"
+    :items="pageBox"
     :fields="fields"
   )
     template(#cell(account)="data")
@@ -13,6 +13,14 @@ b-container#adminorders
       | {{ data.item.products.name }}
     template(#cell(price)="data")
       | {{ data.item.products.price }}
+  .overflow-auto.d-flex.justify-content-center
+    b-pagination.mb-5(
+      v-model="currentPage"
+      :total-rows="totalRows"
+      :per-page="perPage"
+      first-number
+      last-number
+    )
 </template>
 
 <script>
@@ -21,6 +29,8 @@ export default {
   data () {
     return {
       orders: [],
+      currentPage: 1,
+      perPage: 10,
       fields: [
         {
           key: '_id',
@@ -47,6 +57,18 @@ export default {
           sortable: true
         }
       ]
+    }
+  },
+  computed: {
+    pageBox () {
+      const items = this.orders
+      return items.slice(
+        (this.currentPage - 1) * this.perPage,
+        this.currentPage * this.perPage
+      )
+    },
+    totalRows () {
+      return this.orders.length
     }
   },
   async mounted () {
