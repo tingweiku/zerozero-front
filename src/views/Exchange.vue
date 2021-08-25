@@ -76,57 +76,6 @@ export default {
         text: '取得商品失敗'
       })
     }
-    const tl1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.box',
-        start: '-200 30%',
-        end: 'bottom bottom',
-        // markers: true,
-        toggleActions: 'play none none none'
-      },
-      defaults: {
-        duration: 0.5,
-        ease: 'power1'
-      }
-    })
-    tl1
-      .from('#title-1', {
-        y: -50,
-        opacity: 0
-      })
-      .from('#box-1', {
-        y: -50,
-        opacity: 0
-      })
-      .from('#box-2', {
-        y: -50,
-        opacity: 0
-      })
-      .from('#box-3', {
-        y: -50,
-        opacity: 0
-      })
-    const tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#title-2',
-        start: '-400 30%',
-        end: '1000 bottom',
-        // markers: true,
-        toggleActions: 'play none none none'
-      },
-      defaults: {
-        duration: 0.5,
-        ease: 'power1'
-      }
-    })
-    tl2
-      .from('#title-2', {
-        y: -50,
-        opacity: 0
-      })
-      .from('#product', {
-        opacity: 0
-      })
   }
 }
 </script>
